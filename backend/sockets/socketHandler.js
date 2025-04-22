@@ -1,4 +1,5 @@
 const socketHandler = (io)=>{
+    // console.log('inside socketHandler');
     io.on('connection', (socket)=>{
         console.log('a user connected', socket.id)
         socket.on('joinGroup', (groupId)=>{
