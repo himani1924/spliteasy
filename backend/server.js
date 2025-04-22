@@ -10,6 +10,7 @@ import cors from 'cors'
 import { Server } from 'socket.io'
 import http from 'http';
 import socketHandler from './sockets/socketHandler.js'
+import expenseRoutes from './routes/expenseRoutes.js'
 
 configDotenv()
 
@@ -37,6 +38,7 @@ app.use(passport.session())
 app.use('/auth', authRoutes)
 app.use('/test', test)
 app.use('/groups', groupRoutes)
+app.use('/expenses', expenseRoutes)
 
 const server = http.createServer(app)
 
