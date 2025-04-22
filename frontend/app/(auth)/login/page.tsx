@@ -13,19 +13,19 @@ const LoginPage = () => {
     console.log(data);
   };
   return (
-    <div className="container flex flex-row w-full h-screen">
-      <div className="bg-blue-900 w-2/3 flex flex-col h-full justify-center items-center text-white text-5xl font-bold rounded-r-full">
+    <div className="flex flex-col lg:flex-row h-screen w-screen">
+      <div className="hidden lg:flex w-1/2 h-full rounded-r-full bg-blue-900 items-center justify-center">
+      <p className="text-white text-5xl font-bold text-center px-8">
         Hello, welcome
+      </p>
       </div>
-      <div
-        onSubmit={handleSubmit}
-        className="w-1/2 flex flex-col h-full justify-center items-center"
+      <div className=" flex w-full lg:w-1/2 h-full items-center justify-center bg-white px-6"
       >
-        <form className="logincontainer border-1 border-gray-300 p-3 rounded-xl shadow-md flex flex-col justify-center items-center w-3/5 gap-10 py-10">
-          <p className="text-3xl font-bold">Login</p>
+        <form className="w-full max-w-md border border-gray-300 p-8 rounded-2xl shadow-lg flex flex-col gap-6 bg-white" onSubmit={handleSubmit}>
+          <p className="text-4xl font-extrabold text-center text-blue-900">Login</p>
           <input
             type="text"
-            className="bg-gray-100 rounded p-1 w-full"
+            className="w-full p-3 rounded-lg border border-gray-300 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Email Id"
             name="email"
             value={email}
@@ -36,7 +36,7 @@ const LoginPage = () => {
           />
           <input
             type="password"
-            className="bg-gray-100 rounded p-1 w-full"
+            className="w-full p-3 rounded-lg border border-gray-300 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Password"
             name="password"
             value={password}
@@ -47,13 +47,13 @@ const LoginPage = () => {
           />
           <button
             type="submit"
-            className="w-full bg-blue-900 text-white font-bold py-2 rounded"
+            className="w-full bg-blue-900 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition"
           >
             Login
           </button>
           <p className="text-gray-500">
             Dont have an account?{" "}
-            <a href="/signup" className="text-blue-900">
+            <a href="/signup" className="text-blue-900 font-medium hover:underline">
               Sign up
             </a>
           </p>
